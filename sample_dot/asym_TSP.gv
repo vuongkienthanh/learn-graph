@@ -1,0 +1,22 @@
+strict digraph asym_TSP {
+    a -> b [weight=325];
+    a -> c [weight=400];
+    a -> d [weight=150];
+    a -> e [weight=250];
+    b -> a [weight=375];
+    b -> c [weight=315];
+    b -> d [weight=375];
+    b -> e [weight=225];
+    c -> a [weight=300];
+    c -> b [weight=350];
+    c -> d [weight=600];
+    c -> e [weight=360];
+    d -> a [weight=125];
+    d -> b [weight=375];
+    d -> c [weight=650];
+    d -> e [weight=305];
+    e -> a [weight=100];
+    e -> b [weight=350];
+    e -> c [weight=400];
+    e -> d [weight=400];
+}

@@ -45,9 +45,9 @@ execute -> compare;
 }
 ```
 - Hình output từ `dot` và `graph`
-![dot img](sample_graph/dotgraph2.png)
+![dot img](sample_dot/dotgraph2.png)
 - Hình output từ `neato` và `digraph`
-![neato img](sample_graph/neatograph1.png)
+![neato img](sample_dot/neatograph1.png)
 
 # Tôi chỉ viết về `dot`, các command khác cũng tương tự về dot language và command line options
 [Bài viết được dịch từ dot tutorial trên graphviz.com][1]  
@@ -95,7 +95,7 @@ digraph G {
     }
 ```
 
-![fancygraph](sample_graph/fancygraph.png)
+![fancygraph](sample_dot/fancygraph.png)
 
 Trong ví dụ, line 2 là attr của graph, tuỳ chỉnh kích thước của graph thành (4,4) inches. Attr của nodes và edges được để trong dấu ngoặc vuông [ ].  
 Line 3: Shape của main thành hình hộp.  
@@ -321,7 +321,7 @@ digraph G {
     e [shape=polygon, sides=4, distortion=.7];
 }
 ```
-![polygon](sample_graph/polygon.png)
+![polygon](sample_dot/polygon.png)
 
 Shape nhóm record chỉ có 2 shapes: `record` và `Mrecord`. 2 shape này giống như ngoại trừ `Mrecord` thì được làm tròn góc. Node có hình dạng hình hộp ngang và dọc xếp chồng lên nhau, thể hiện danh sách liệt kê các nội dung. Nó được định dạng trong attr `label` với cấu trúc sau: 
 ```
@@ -340,7 +340,7 @@ node [shape=record];
     struct1 -> struct3;
  }
 ```
-![record](sample_graph/record.png)
+![record](sample_dot/record.png)
 
 ### b. Label
 Mặc định label là tên của của nodes và edges. Ta có thay đổi label của nodes và edges bằng attr `label`. Ta có thể viết label nhiều dòng bằng cách thêm `\n`.   
@@ -374,7 +374,7 @@ digraph html {
 </TABLE>>];
 }
 ```
-![html](sample_graph/html.png)
+![html](sample_dot/html.png)
 
 ### d. Styles
 Nodes và edges mặc định attr `color` là black. `color` có value là HSB, RGB, tên màu. Ví dụ như "orchid", "0.8396,0.4862,0.8549", "#DA70D6" vẽ cùng 1 màu.
@@ -400,7 +400,7 @@ Kích thước tự nhiên của hình ảnh xuất ra sẽ to khi graph to, đ�
 
 Trong graph có timeline hoặc nhấn mạch rank sink và source node, ta có thể đặt `rank` trong subgraph bằng value `same`, `min`, `max`, `source` và `sink`. `rank=same` để các node trong subgraph cùng rank với nhau, `rank=min` để nodes ở rank thấp nhất, `rank=source` cũng để nodes ở rank thấp nhất và không chứa rank khác ngoài min và source. `rank=max` và `rank=sink` để nodes ở rank cao nhất. Các subgraph có node bị share ở nhiều rank khác nhau sẽ được để chung 1 rank.  
 
-![rank](sample_graph/rank.png)
+![rank](sample_dot/rank.png)
 
 Để giữ nguyên thứ tự của nodes như trong input file, ta dùng `ordering=out` cho graph, subgraph. 
 
@@ -416,14 +416,14 @@ Một số trường hợp, ta không muốn cho đuôi edge quá gần node, ta
 ### a. port
 port là nơi bám của edge trong 1 node. Mặc định là port sẽ ở trung tâm của node, và bị cắt nang ở viền của node.
 
-![port](sample_graph/port.png)
+![port](sample_dot/port.png)
 
 ### b. cluster
 cluster là subgraph có trên bắt đầu bằng `cluster`, và được đóng khung khi vẽ graph. Có thể tuỳ chỉnh bằng `fillcolor`, `style="filled"`.
 
 Nếu toplevel graph có `compound=true`, `dot` có thể vẽ edge nối các nodes và clustes bằng `lhead` và `ltail`
 
-![compound](sample_graph/compound.png)
+![compound](sample_dot/compound.png)
 
 ### c. concentration
 `concentration=true` ở toplevel graph sẽ cho phép các edge gộp chung lại khi graph quá phức tạp
